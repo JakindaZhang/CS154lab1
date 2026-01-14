@@ -45,7 +45,7 @@ with pyrtl.conditional_assignment:
 # update the hours register here
 with pyrtl.conditional_assignment:
     with (seconds==59) & (minutes == 59):
-        with hours == 59:
+        with hours == 23:
             hours.next |= pyrtl.Const(0, bitwidth=5)
         with pyrtl.otherwise:
             hours.next |= hours + 1
